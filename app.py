@@ -89,7 +89,7 @@ def process_frame():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 
 @app.route('/video_feed')
@@ -99,4 +99,4 @@ def video_feed():
 
 if __name__ == '__main__':
     # Run the Flask application on a specific IP address
-    app.run(host='192.168.0.108', port=5000,)
+    app.run(host='0.0.0.0', port=5000, debug=True)
