@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,46 +11,223 @@
     <title>Welcome</title>
 
     <style>
-      /* Custom CSS to center the content */
-      body, html {
-        height: 100%;
-      }
+        /* Custom CSS to center the content */
+        body, html {
+            height: 100%;
+        }
 
-      .container {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-      .image-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
-        max-width: 300px;
-        margin-top: 20px;
-      }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            max-width: 300px;
+            margin-top: 20px;
+        }
 
-      .image-grid img {
-        width: 100%;
-        height: auto;
-      }
+        .image-grid img {
+            width: 100%;
+            height: auto;
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="mt-5 text-center">Virtual TryOn</h1>
-
-      <div class="image-grid">
-        <a href="http://192.168.0.142:5000/"><img src="https://i.ibb.co/ZWw4NqS/1.png" border="1" alt="Image 1"></a>
-        <a href="#"><img src="https://i.ibb.co/6mytmVP/2.png" border="1" alt="Image 2"></a>
-        <a href="#"><img src="https://i.ibb.co/Lt5XjxF/3.png" border="1" alt="Image 3"></a>
-        <a href="#"><img src="https://i.ibb.co/3y863GD/4.png" border="1" alt="Image 4"></a>
-      </div>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5 text-center">Virtual TryOn</h1>
+    <br/>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card h-100">
+                <div class="d-flex justify-content-between position-absolute w-100">
+                    <div class="label-new">
+                        <span class="text-white bg-success small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="ml-1">New</span>
+                        </span>
+                    </div>
+                    <div class="label-sale">
+                        <span class="text-white bg-primary small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-tag" aria-hidden="true"></i>
+                            <span class="ml-1">Sale</span>
+                        </span>
+                    </div>
+                </div>
+                <a href="http://192.168.68.123:5000/">
+                    <img src="https://i.ibb.co/ZWw4NqS/1.png" class="card-img-top" alt="Product 1">
+                </a>
+                <div class="card-body px-2 pb-2 pt-1">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="h4 text-primary">$129,99</p>
+                        </div>
+                        <div>
+                            <a href="#" class="text-secondary lead" data-toggle="tooltip" data-placement="left" title="Compare">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-warning d-flex align-items-center mb-2">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </p>
+                    <p class="mb-0">
+                        <strong>Product 1</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100">
+                <div class="d-flex justify-content-between position-absolute w-100">
+                    <div class="label-new">
+                        <span class="text-white bg-success small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="ml-1">New</span>
+                        </span>
+                    </div>
+                    <div class="label-sale">
+                        <span class="text-white bg-primary small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-tag" aria-hidden="true"></i>
+                            <span class="ml-1">Sale</span>
+                        </span>
+                    </div>
+                </div>
+                <a href="http://192.168.68.123:5000/">
+                    <img src="https://i.ibb.co/6mytmVP/2.png" class="card-img-top" alt="Product 2">
+                </a>
+                <div class="card-body px-2 pb-2 pt-1">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="h4 text-primary">$99,99</p>
+                        </div>
+                        <div>
+                            <a href="#" class="text-secondary lead" data-toggle="tooltip" data-placement="left" title="Compare">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-warning d-flex align-items-center mb-2">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </p>
+                    <p class="mb-0">
+                        <strong>Product 2</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100">
+                <div class="d-flex justify-content-between position-absolute w-100">
+                    <div class="label-new">
+                        <span class="text-white bg-success small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="ml-1">New</span>
+                        </span>
+                    </div>
+                    <div class="label-sale">
+                        <span class="text-white bg-primary small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-tag" aria-hidden="true"></i>
+                            <span class="ml-1">Sale</span>
+                        </span>
+                    </div>
+                </div>
+                <a href="http://192.168.68.123:5000/">
+                    <img src="https://i.ibb.co/Lt5XjxF/3.png" class="card-img-top" alt="Product 3">
+                </a>
+                <div class="card-body px-2 pb-2 pt-1">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="h4 text-primary">$79,99</p>
+                        </div>
+                        <div>
+                            <a href="#" class="text-secondary lead" data-toggle="tooltip" data-placement="left" title="Compare">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-warning d-flex align-items-center mb-2">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </p>
+                    <p class="mb-0">
+                        <strong>Product 3</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100">
+                <div class="d-flex justify-content-between position-absolute w-100">
+                    <div class="label-new">
+                        <span class="text-white bg-success small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="ml-1">New</span>
+                        </span>
+                    </div>
+                    <div class="label-sale">
+                        <span class="text-white bg-primary small d-flex align-items-center px-2 py-1">
+                            <i class="fa fa-tag" aria-hidden="true"></i>
+                            <span class="ml-1">Sale</span>
+                        </span>
+                    </div>
+                </div>
+                <a href="http://192.168.68.123:5000/">
+                    <img src="https://i.ibb.co/3y863GD/4.png" class="card-img-top" alt="Product 4">
+                </a>
+                <div class="card-body px-2 pb-2 pt-1">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="h4 text-primary">$149,99</p>
+                        </div>
+                        <div>
+                            <a href="#" class="text-secondary lead" data-toggle="tooltip" data-placement="left" title="Compare">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-warning d-flex align-items-center mb-2">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </p>
+                    <p class="mb-0">
+                        <strong>Product 4</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+<!-- Optional JavaScript; Bootstrap Bundle with Popper.js and jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-W6G5qUtHioa3e/A9gSS6FvI0JKUM1zL+fXlKw7t6s2V+Z7/Rq7U4TzEYfd3tgB0T" crossorigin="anonymous"></script>
+<script>
+    $(function(){
+        $('[data-toggle=tooltip]').tooltip();
+
+        $('.grid-view').click(function(){
+            // Perform grid view logic here
+        });
+    });
+</script>
+</body>
 </html>
