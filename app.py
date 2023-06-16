@@ -99,4 +99,4 @@ def video_feed():
 
 if __name__ == '__main__':
     # Run the Flask application on a specific IP address
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='192.168.0.125', port=5000, debug=True)
