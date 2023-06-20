@@ -14,15 +14,15 @@ detector = PoseDetector()
 
 shirt_folder_path = "Resources/Shirts"
 list_shirts = os.listdir(shirt_folder_path)
-fixed_ratio = 250 / 190  # widthOfShirt/widthOfPoint11to12
+fixed_ratio = 270 / 190  # widthOfShirt/widthOfPoint11to12
 shirt_ratio_height_width = 581 / 440
 image_number = 1
 
 default_shirt_width = 200
 
 
-def process_frame():
-    image_number = 1
+def process_frame(id):
+    image_number = id
     hand_raise_duration = 5
     left_hand_raised_time = 0
     right_hand_raised_time = 0
@@ -32,33 +32,33 @@ def process_frame():
         img = detector.findPose(img)
         lmList, bbox_info = detector.findPosition(img, bboxWithHands=False, draw=False)
 
-        if lmList:
-            # Get the coordinates of the left and right hands
-            left_hand_coordinates = lmList[15][1:4]
-            right_hand_coordinates = lmList[16][1:4]
-
-            # Calculate the distance between left and right hands
-            hand_distance = right_hand_coordinates[1] - left_hand_coordinates[1]
-
-            # Check if the left hand is raised
-            if hand_distance > 50:
-                left_hand_raised_time += 1
-                right_hand_raised_time = 0
-
-                if left_hand_raised_time >= hand_raise_duration:
-                    left_hand_raised_time = 0
-                    if image_number < len(list_shirts) - 1:
-                        image_number += 1
-
-            # Check if the right hand is raised
-            elif hand_distance < -50:
-                right_hand_raised_time += 1
-                left_hand_raised_time = 0
-
-                if right_hand_raised_time >= hand_raise_duration:
-                    right_hand_raised_time = 0
-                    if image_number > 0:
-                        image_number -= 1
+        # if lmList:
+        #     # Get the coordinates of the left and right hands
+        #     left_hand_coordinates = lmList[15][1:4]
+        #     right_hand_coordinates = lmList[16][1:4]
+        #
+        #     # Calculate the distance between left and right hands
+        #     hand_distance = right_hand_coordinates[1] - left_hand_coordinates[1]
+        #
+        #     # Check if the left hand is raised
+        #     if hand_distance > 50:
+        #         left_hand_raised_time += 1
+        #         right_hand_raised_time = 0
+        #
+        #         if left_hand_raised_time >= hand_raise_duration:
+        #             left_hand_raised_time = 0
+        #             if image_number < len(list_shirts) - 1:
+        #                 image_number += 1
+        #
+        #     # Check if the right hand is raised
+        #     elif hand_distance < -50:
+        #         right_hand_raised_time += 1
+        #         left_hand_raised_time = 0
+        #
+        #         if right_hand_raised_time >= hand_raise_duration:
+        #             right_hand_raised_time = 0
+        #             if image_number > 0:
+        #                 image_number -= 1
 
         if lmList:
             lm11 = lmList[11][1:4]
@@ -87,16 +87,16 @@ def process_frame():
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
-@app.route('/')
-def index():
-    return render_template('index2.html')
+@app.route('/<int:video_id>')
+def index(video_id):
+    return render_template('index2.html', video_id=video_id)
 
 
-@app.route('/video_feed')
-def video_feed():
-    return Response(process_frame(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
+@app.route('/video_feed/<int:id>')
+def video_feed(id):
+    return Response(process_frame(id), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
     # Run the Flask application on a specific IP address
-    app.run(host='192.168.245.11', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
